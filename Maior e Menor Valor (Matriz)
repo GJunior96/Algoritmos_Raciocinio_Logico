@@ -1,0 +1,46 @@
+programa
+{
+	/*
+	 * Algorítmo que solicita 6 números e apresenta o maior e o menor
+	 * 10/06/2020
+	 * Criado por Gilberto Júnior Almada
+	 * Desenvolvido no Software Portugol Studio par a aula sobre Matrizes
+	 */
+	 
+	inteiro matriz[3][2]
+	inteiro maior, menor
+	funcao inicio()
+	{
+		// Preenchendo matriz com os valores dados pelo usuário
+		para (inteiro i = 0; i<= 2; i++)
+		{
+			para (inteiro j = 0; j <= 1; j++)
+			{
+				escreva("Digite o valor da posição ",i,",",j,": ")
+				leia(matriz[i][j])
+				escreva("\n")
+			}
+		}
+
+		// Armazenando o maior e o menor valor digitado
+		maior = matriz[0][0]
+		menor = matriz[0][0]
+		para (inteiro i = 0; i<= 2; i++)
+		{
+			para (inteiro j = 0; j <= 1; j++)
+			{
+				se (matriz[i][j] > maior)
+				{
+					maior = matriz[i][j]
+				}
+				se (matriz[i][j] < menor)
+				{
+					menor = matriz[i][j]
+				}
+			}
+		}
+
+		// Apresentando dados ao usuário
+		escreva("O MAIOR número digitado foi: ",maior,"\n","O MENOR número digitado foi: ", menor)
+	}
+}
