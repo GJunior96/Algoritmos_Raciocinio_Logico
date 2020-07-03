@@ -1,0 +1,59 @@
+programa
+{
+	/*
+	 * Algorítmo que solicita as tres notas de provas de 5 alunos e apresenta a média de cada aluno
+	 * 10/06/2020
+	 * Criado por Gilberto Júnior Almada
+	 * Desenvolvido no Software Portugol Studio par a aula sobre Matrizes
+	 */
+	
+	cadeia titulo[2]
+	real saida[5][5]
+	real soma, somaT = 0.00, mediaT = 0.00
+	
+	funcao inicio()
+	{
+		titulo[0] = "CÓDIGO"
+		titulo[1] = "MÉDIA DO ALUNO"
+
+		// Solicitando as notas
+		para (inteiro i = 0; i <= 4; i++)
+		{
+			soma = 0.00
+			escreva("Aluno ",i+1,"\n")
+			saida[i][0] = i + 1.00
+			
+			para (inteiro j = 2; j <= 4; j ++)
+			{
+				escreva("Digita a ",j - 1,"ª nota: ")
+				leia(saida[i][j])
+				escreva("\n")
+				soma = soma + saida[i][j]
+			}
+			saida[i][1] = soma / 3
+			somaT = somaT + saida[i][1]
+		}
+
+		// Calculando a média
+		mediaT = somaT / 5
+		
+		escreva("\n")
+
+		// Apresentando dados
+		para (inteiro i = 0; i <= 1; i++)
+		{
+			escreva(titulo[i], "     ")
+		}
+		escreva("\n")
+
+		para (inteiro i = 0; i <= 4; i++)
+		{
+			para (inteiro j = 0; j <= 1; j++)
+			{
+				escreva(saida[i][j],"        ")
+			}
+			escreva("\n")
+		}
+		escreva("A média da turma é: ",mediaT)
+	}
+}
