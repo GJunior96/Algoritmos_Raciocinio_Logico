@@ -1,0 +1,60 @@
+programa
+{
+	/*
+	 * Algorítmo de calculadora simples, que faz o calculo do dobro, triplo e quádruplo de um valor
+	 * 18/06/2020
+	 * Criado por Gilberto Júnior Almada
+	 * Desenvolvido no Software Portugol Studio par a aula sobre Modularização
+	 */
+	funcao menu()
+	{
+		// Menu de opções e solicitação de valor para calcular
+		inteiro num, esc
+		escreva("####  MENU  ####\n","\n","1 - Dobro\n","2 - Triplo\n","3 - Quádruplo\n","\n","Escolha uma opção: ")
+		leia(esc)
+		
+		escolha(esc)
+		{
+			caso 1:
+				escreva("Digite o valor a ser dobrado: ")
+				leia(num)
+				dobro(num)
+			pare
+
+			caso 2:
+				escreva("Digite o valor a ser triplicado: ")
+				leia(num)
+				triplo(num)
+			pare
+
+			caso 3:
+				escreva("Digite o valor a ser quadriplicado: ")
+				leia(num)
+				quadruplo(num)
+			pare
+		}
+	}
+	
+	// Apresentando valores
+	funcao dobro(inteiro n)
+	{
+		inteiro res = n * n
+		escreva("O dobro de ",n," é: ",res)
+	}
+
+	funcao triplo(inteiro n)
+	{
+		inteiro res = n * n * n
+		escreva("O triplo de ",n," é: ",res)
+	}
+
+	funcao quadruplo(inteiro n)
+	{
+		inteiro res = n * n * n * n
+		escreva("O quádruplo de ",n," é: ",res)
+	}
+	funcao inicio()
+	{
+		menu()
+	}
+}
