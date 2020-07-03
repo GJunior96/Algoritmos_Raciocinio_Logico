@@ -1,0 +1,46 @@
+programa
+{
+	/*
+	 * Algorítmo que solicita o valor de 4 produtos em 3 mercados diferentes, e apresenta, ao usuário, os mercados cujos produtos custam até 10 reais
+	 * 10/06/2020
+	 * Criado por Gilberto Júnior Almada
+	 * Desenvolvido no Software Portugol Studio par a aula sobre Matrizes
+	 */
+	cadeia merc[3], pro[4]
+	real pre[4][3]
+	
+	funcao inicio()
+	{
+		merc[0] = "MERCADO 01"
+		merc[1] = "MERCADO 02"
+		merc[2] = "MERCADO 03"
+		
+		pro[0] = "PRODUTO 01" 
+		pro[1] = "PRODUTO 02"
+		pro[2] = "PRODUTO 03"
+		pro[3] = "PRODUTO 04"
+
+		// Solicitando os valores dos produtos
+		para (inteiro p = 0; p <= 3; p++)
+		{
+			para (inteiro n = 0; n <= 2; n++)
+			{
+				escreva("Digite o preço do ",pro[p]," no ",merc[n],": ")
+				leia(pre[p][n])
+				escreva("\n")
+			}
+		}
+
+		// Verificando os produtos com valor inferior ou igual a 10 e apresentando ao usuário
+		para (inteiro p = 0; p <= 3; p++)
+		{
+			para (inteiro n = 0; n <= 2; n++)
+			{
+				se (pre[p][n] <= 10)
+				{
+					escreva("O ",pro[p]," pode ser encontrado no ",merc[n],", custando R$",pre[p][n],"\n")
+				}
+			}
+		}
+	}
+}
