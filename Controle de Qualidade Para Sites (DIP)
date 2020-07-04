@@ -1,0 +1,150 @@
+programa
+{
+	/*
+	 * Algorítmo de controle de qualidade para sites de compra
+   * O programa faz 5 perguntas ao usuário e de acordo com as respostas, apresenta o nível de qualidade do site
+	 * Realizado na Dinâmica Interdisciplinar do dia 27/05/2020
+	 * Disciplinas: Lógica de Programação e Desing de Interação
+	 * Desenvolvido no Software Portugol Studio
+	 * Desenvolvido por Eu e Mim...LOL (Gilberto Júnior Almada)
+	 * Executável no Portugol Studio. No visualg, acredito que não rodará corretamente, devido a sintaxe ser um pouco diferente
+	 * P.S. Dei uma enfeitada no código, para aproveitar melhor o conteúdo das aulas, até o momento.
+	 */
+	
+
+	inteiro esco, nota
+	cadeia opc = "1 - Péssima\n2 - Ruim\n3 - Boa\n4 - Excelente\n"
+	
+	funcao inicio()
+	{
+		nota = 0
+
+		// Introdução
+
+		escreva ("Responda um breve questionário para ajudar a melhorar a experiência de compra e navegação do site.\n")
+		escreva ("Todas as perguntas, do questionário, deverão ser respondidas com números de 1 a 4.\n")
+		escreva ("1 - Responder\n","2 - Não Responder\n")
+		leia (esco)
+		limpa()
+		
+		faca
+		{
+			se (esco != 2 e esco != 1)
+			{
+				escreva ("Opção inválida!\n","1 - Responder\n","2 - Não Responder\n")
+				leia (esco)
+				limpa()
+			}
+			se (esco == 2)
+			{
+				escreva ("Achou que tinha escolha? haha! Vai responder mesmo assim.\n","\n")
+			}
+		}enquanto (esco != 1 e esco != 2)
+
+
+		// Perguntas para o usuário + coleta de dados
+
+		para (inteiro cont = 1; cont <= 5; cont++)
+		{
+			escolha (cont)
+			{
+				//Pergunta 01
+				caso 1:
+					escreva ("O que você achou das ferramentas de busca, para encontrar o produto desejado?\n")
+					escreva (opc)
+					leia (esco)
+				pare
+				//Pergunta 02
+				caso 2:
+					escreva ("O que você achou da aparência do site?\n")
+					escreva (opc)
+					leia (esco)
+				pare
+				//Pergunta 03
+				caso 3:
+					escreva ("O que você achou da navegação entre as páginas?\n")
+					escreva (opc)
+					leia (esco)
+				pare
+				//Pergunta 04
+				caso 4:
+					escreva ("O que você achou da quantidade de passos necessários até a finalização da compra?\n")
+					escreva (opc)
+					leia (esco)
+				pare
+				//Pergunta 05
+				caso 5:
+					escreva ("O que você achou da experiência de criar uma conta no site?\n")
+					escreva (opc)
+					leia (esco)
+				pare
+				
+			}
+
+			//Processamento das respostas
+			faca
+			{	
+				se (esco < 1 ou esco > 4)
+				{
+					escreva ("Número inválido! Você precisa digitar um número de 1 a 4.\n")
+					leia(esco)
+				}
+				escolha (esco)
+				{
+					caso 1: 
+					nota = nota - 2
+					pare
+		
+					caso 2:
+					nota = nota - 1
+					pare
+					
+					caso 3:
+					nota = nota + 1
+					pare
+
+					caso 4:
+					nota = nota + 2
+		
+				}
+			} enquanto (esco < 1 ou esco > 4)
+			limpa()
+		
+		}
+		
+		/*
+		 * O maior resultado possível é 10 e o menor é -10
+		 * As únicas maneiras de obter resultado "EXCELENTE" é se todas as respostas forem "EXCELENTE" ou se quatro delas forem "EXCELENTE" e uma for "BOA"
+		 * Obviamente, combinações de respostas diferentes acarretarão em resultados diferentes
+		 * Nas opções "PÉSSIMO" e "EXCELENTE", o número somado ou subtraído é maior, para que tais respostas tenham um peso maior e, consequentemente, mais possibilidades no resultado final. 
+		*/
+		
+		// Saída de dados
+		se (nota <= - 5)
+		{
+			escreva ("Obrigado por ajudar no aprimoramento do site!\n","De acordo com suas respostas percebemos que temos muito a melhorar. Obrigado, novamente, pelo seu feedback.\n","(Classificação: PÉSSIMO)")
+		}
+		senao
+		{
+			se (nota > -5 e nota <= 2)
+			{
+				escreva ("Obrigado por ajudar no aprimoramento do site!\n","Usaremos seu feedback para melhorar a qualidade de nosso site. Obrigado, novamente, pelo seu feedback.\n","(Classificação: RUIM)")
+			}
+			senao
+			{
+				se (nota > 2 e nota <= 8)
+				{
+					escreva ("Obrigado por ajudar no aprimoramento do site!\n","De acordo com suas respostas percebemos que estamos no caminho certo, mas ainda temos aspectos a melhorar. Obrigado, novamente, pelo seu feedback.\n","(Classificação: BOM)")
+				}
+				senao
+				{
+					se (nota > 8)
+					{
+						escreva ("Obrigado por ajudar no aprimoramento do site!\n","Ficamos felizes em saber que estamos entregando um serviço de qualidade aos nossos clientes. Obrigado, novamente, pelo seu feedback.\n","(Classificação: EXCELENTE)")
+					}
+				}
+			}
+			
+		}
+	}
+}
