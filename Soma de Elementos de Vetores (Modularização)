@@ -1,0 +1,51 @@
+programa
+{
+	/*
+	 * Algorítmo que preenche 2 vetores com 3 elementos e mostra ao usuário a soma combinada de cada elemento dos vetores 
+	 * 19/06/2020
+	 * Criado por Gilberto Júnior Almada
+	 * Desenvolvido no Software Portugol Studio par a aula sobre Modularização
+	 */
+	inteiro veta[3], vetb[3], vetc[3]
+
+	// Função para preenchimento do 1º vetor
+	funcao inteiro vet1(inteiro cont)
+	{
+		inteiro valor
+		escreva("Digite o valor do ",cont+1,"º elemento do 1º vetor: ")
+		leia(valor)
+		retorne valor
+	}
+
+	// Função para preenchimento do 2º vetor
+	funcao inteiro vet2(inteiro cont)
+	{
+		inteiro valor
+		escreva("Digite o valor do ",cont+1,"º elemento do 2º vetor: ")
+		leia(valor)
+		retorne valor
+	}
+
+	// Função para preenchimento da soma dos elementos
+	funcao inteiro vet3(inteiro a, inteiro b)
+	{
+		inteiro soma = a + b
+		retorne soma
+	}
+	
+	funcao inicio()
+	{
+		para (inteiro i = 0; i <= 2; i ++)
+		{
+			veta[i] = vet1(i)
+			vetb[i] = vet2(i)
+			vetc[i] = veta[i] + vetb[i]
+		}
+
+		// Apresentando dados para o usuário
+		para (inteiro i = 0; i <= 2; i ++)
+		{
+			escreva("A soma do ",i+1,"º elemento dos vetores é: ",vetc[i],"\n")
+		}
+	}
+}
