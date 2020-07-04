@@ -1,0 +1,36 @@
+programa
+{
+	/*
+	 * Algorítmo que solicita um número e mostra seu fatorial através de uma função
+	 * 19/06/2020
+	 * Criado por Gilberto Júnior Almada
+	 * Desenvolvido no Software Portugol Studio par a aula sobre Modularização
+	 */
+	funcao inteiro fat(inteiro n)
+	{
+		inteiro aux = n
+		
+		se (aux != 0)
+		{
+			para (inteiro i = n - 1; i >= 1; i--)
+			{
+				aux = aux * i
+			}
+		}
+		senao
+		{
+			aux = 1
+		}
+		retorne aux
+	}
+	
+	inteiro num
+
+	funcao inicio()
+	{
+		escreva("Digite um número para saber seu fatorial: ")
+		leia(num)
+		escreva("O fatorial de ",num," é: ",fat(num))
+		
+	}
+}
