@@ -1,0 +1,82 @@
+programa
+{
+	/*
+	 * Algorítmo para Controle de Processos de Projeto
+	 * Programa solicita ao usuário percentual de conclusão de cada uma das fases de um projeto
+	 * Desenvolvido no dia 17/06/2020 para a DIP de Raciocínio Lógico e Design de Interação
+	 * Softare de criação: Portugol Studio
+	 * Autor: Gilberto Júnior Almada
+	 * P.S. Na tabela gerada no fim do algorítmo, os numéros e textos não ficam muito bem alinhados no console
+	 */
+
+	cadeia titulo[6], projeto[3]
+	inteiro porc[3][5], somat
+	
+	
+	funcao inicio()
+	{
+		// Títulos da Tabela final
+		titulo[0] = "PROJETO"
+		titulo[1] = "ANÁLISE E MODELAGEM"
+		titulo[2] = "PROJETO"
+		titulo[3] = "CONSTRUÇÃO"
+		titulo[4] = "VALIDAÇÃO"
+		titulo[5] = "PROGRESSO TOTAL"
+		
+		// Dando nome aos projetos e preenchendo as fases coma as porcentagens
+		para (inteiro i = 0; i <= 2; i++)
+		{
+			escreva("Digite o nome do ",i+1,"º projeto: ")
+			leia(projeto[i])
+			somat = 0
+			
+			para (inteiro j = 0; j<= 4; j ++)
+			{
+				escolha (j)
+				{
+					caso 0:
+						escreva("Digite o percentual de conclusão da fase de Análise e Modelagem de Interface: ")
+						leia(porc[i][j])
+					pare
+					
+					caso 1:
+						escreva("Digite o percentual de conclusão da fase de Projeto de Interface: ")
+						leia(porc[i][j])
+					pare
+
+					caso 2:
+						escreva("Digite o percentual de conclusão da fase de Construção de Interface: ")
+						leia(porc[i][j])
+					pare
+
+					caso 3:
+						escreva("Digite o percentual de conclusão da fase de Validação de Interface: ")
+						leia(porc[i][j])
+					pare
+
+					caso 4:
+						porc[i][j] = somat/4
+				}
+				somat = somat + porc[i][j]
+			}
+		}
+		limpa()
+
+		// Apresentando a tabela para o usuário (não encontrei uma maneira de deixar os números e textos perfeitamente alinhados)
+		para (inteiro i = 0; i <= 5; i++)
+		{
+			escreva(titulo[i],"     ")
+		}
+		escreva("\n")
+		
+		para (inteiro i = 0; i <= 2; i++)
+		{
+			escreva(projeto[i],"               ")
+			para(inteiro j = 0; j<= 4; j++)
+			{
+				escreva(porc[i][j],"%            ")
+			}
+			escreva("\n")
+		}
+	}
+}
